@@ -12,7 +12,7 @@ const Container = ({
     <>
       <div
         className={cn(
-          "max-w-4xl mx-auto px-4 bg-white dark:bg-black",
+          "mx-auto w-full max-w-4xl bg-white dark:bg-black",
           className,
         )}
       >
