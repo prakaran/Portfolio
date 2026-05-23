@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Container from "../container";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { Link } from "next-view-transitions";
 
 const Navbar = () => {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -50,13 +50,15 @@ const Navbar = () => {
         }}
         className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white px-3 py-2 dark:bg-neutral-900"
       >
-        <Image
-          className="h-10 w-10 rounded-full"
-          src="/avatar.png"
-          alt="Avatar"
-          width={50}
-          height={50}
-        />
+        <Link href="/">
+          <Image
+            className="h-10 w-10 rounded-full"
+            src="/avatar.png"
+            alt="Avatar"
+            width={50}
+            height={50}
+          />
+        </Link>
         <div className="flex items-center">
           {navItems.map((item) => (
             <Link

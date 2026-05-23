@@ -1,0 +1,1184 @@
+---
+title: "Linux Fundamentals: File System, Commands, Permissions & Package Management"
+description: "A beginner-friendly yet comprehensive guide to understanding the Linux file system, commands, permissions, users, groups, APT package manager, and Vim editor."
+tags: ["linux", "devops", "terminal", "ubuntu", "linux-basics"]
+author: "Karan Bhatt"
+date: "2023-05-02"
+slug: "linux-basic"
+---
+
+# Linux Fundamentals: File System, Commands, Permissions & Package Management
+
+![Linux Fundamentals](/linux.jpeg)  
+Linux powers servers, cloud infrastructure, Android phones, supercomputers, and most of the internet.  
+If you're learning DevOps, backend engineering, cybersecurity, or system administration, Linux is non-negotiable.
+
+This guide covers:
+
+- Linux File System
+- Linux Folder Structure
+- Essential Linux Commands
+- Pipes & Redirection
+- APT Package Manager
+- Vim Text Editor
+- Users, Groups & Permissions
+- chmod & Ownership
+
+---
+
+# Understanding the Linux File System
+
+One of the most important concepts in Linux is:
+
+> **Everything in Linux is a file**
+
+Unlike Windows or macOS, Linux treats almost everything as files:
+
+- Regular files
+- Directories
+- Devices
+- Processes
+- Network sockets
+- Hardware components
+
+For example:
+
+- Your webcam is represented as a file
+- Your keyboard is represented as a file
+- Hard disks are files
+- USB drives are files
+
+This design philosophy makes Linux extremely powerful and flexible.
+
+---
+
+# Root User vs Normal Users
+
+Linux has a special superuser called:
+
+```bash
+root
+```
+
+The root user has unrestricted access to the entire system.
+
+The root user also has its own home directory:
+
+```bash
+/root
+```
+
+Normal users typically have home directories like:
+
+```bash
+/home/username
+```
+
+On macOS, user home directories are usually located in:
+
+```bash
+/Users/username
+```
+
+---
+
+# Linux Folder Structure Explained
+
+Linux uses a hierarchical file system structure.
+
+Everything starts from:
+
+```bash
+/
+```
+
+This is called the **root directory**.
+
+---
+
+# Important Linux Directories
+
+## `/home`
+
+Home directories of normal users.
+
+Example:
+
+```bash
+/home/john
+```
+
+If a user is created with a home directory, their personal files live here.
+
+---
+
+## `/bin`
+
+Contains essential executable commands.
+
+Examples:
+
+```bash
+ls
+cp
+mv
+cat
+```
+
+---
+
+## `/sbin`
+
+Contains system binaries that usually require superuser privileges.
+
+Examples:
+
+```bash
+reboot
+fdisk
+iptables
+```
+
+---
+
+## `/lib`
+
+Contains shared libraries required by programs inside `/bin` and `/sbin`.
+
+Think of these like reusable code modules.
+
+---
+
+## `/usr`
+
+Historically used for user home directories due to storage limitations in older UNIX systems.
+
+Today it contains:
+
+- User applications
+- Libraries
+- Documentation
+- System utilities
+
+---
+
+## `/usr/local`
+
+Programs manually installed by YOU.
+
+Usually used for:
+
+- Third-party software
+- Custom compiled applications
+
+Accessible to all users.
+
+---
+
+## `/opt`
+
+Used for third-party applications that keep everything self-contained.
+
+Examples:
+
+- Google Chrome
+- Discord
+- VS Code
+
+---
+
+## `/boot`
+
+Contains files required for booting Linux.
+
+Includes:
+
+- Kernel
+- Bootloader files
+- initramfs
+
+---
+
+## `/etc`
+
+Contains system-wide configuration files.
+
+Examples:
+
+```bash
+/etc/passwd
+/etc/hosts
+/etc/nginx
+```
+
+---
+
+## `/dev`
+
+Contains device files.
+
+Examples:
+
+- Mouse
+- Webcam
+- Keyboard
+- Hard drives
+
+Linux interacts with hardware through these files.
+
+---
+
+## `/var`
+
+Stores variable data.
+
+Examples:
+
+- Logs
+- Cache
+- Temporary mail data
+
+---
+
+## `/var/cache`
+
+Stores cached data for applications.
+
+---
+
+## `/tmp`
+
+Temporary files required by processes.
+
+Files here may be deleted automatically after reboot.
+
+---
+
+## `/media`
+
+Mount point for removable media.
+
+Examples:
+
+- USB drives
+- External hard disks
+
+---
+
+## `/mnt`
+
+Temporary mount points used manually by users/admins.
+
+---
+
+# Hidden Files in Linux
+
+Files beginning with a dot (`.`) are hidden.
+
+Example:
+
+```bash
+.bashrc
+.gitignore
+.env
+```
+
+To view hidden files:
+
+```bash
+ls -a
+```
+
+---
+
+# Essential Linux Commands
+
+---
+
+# `pwd`
+
+Shows current directory.
+
+```bash
+pwd
+```
+
+Example output:
+
+```bash
+/home/john
+```
+
+---
+
+# `ls`
+
+Lists contents of current directory.
+
+```bash
+ls
+```
+
+---
+
+# `cd`
+
+Changes directory.
+
+```bash
+cd Documents
+```
+
+Go to root directory:
+
+```bash
+cd /
+```
+
+Go to home directory:
+
+```bash
+cd
+```
+
+---
+
+# `mkdir`
+
+Creates directories.
+
+```bash
+mkdir projects
+```
+
+---
+
+# `touch`
+
+Creates files.
+
+```bash
+touch app.js
+```
+
+---
+
+# `rm`
+
+Deletes files.
+
+```bash
+rm file.txt
+```
+
+---
+
+# `rm -r`
+
+Deletes non-empty directories recursively.
+
+```bash
+rm -r project
+```
+
+Be careful with this command.
+
+---
+
+# `rmdir`
+
+Deletes empty directories.
+
+```bash
+rmdir empty-folder
+```
+
+---
+
+# `clear`
+
+Clears terminal screen.
+
+```bash
+clear
+```
+
+---
+
+# `mv`
+
+Moves or renames files.
+
+Rename example:
+
+```bash
+mv old.txt new.txt
+```
+
+---
+
+# `cp -r`
+
+Copies folders recursively.
+
+```bash
+cp -r source destination
+```
+
+---
+
+# `ls -R`
+
+Lists all nested files and directories recursively.
+
+```bash
+ls -R
+```
+
+---
+
+# `history`
+
+Displays previously executed commands.
+
+```bash
+history
+```
+
+---
+
+# `ls -a`
+
+Displays hidden files.
+
+```bash
+ls -a
+```
+
+---
+
+# `ls -l`
+
+Long listing format.
+
+```bash
+ls -l
+```
+
+Includes:
+
+- Permissions
+- Owner
+- Size
+- Date modified
+
+Show hidden files too:
+
+```bash
+ls -la
+```
+
+---
+
+# `cat`
+
+Displays file contents.
+
+```bash
+cat notes.txt
+```
+
+---
+
+# `uname -a`
+
+Shows system and kernel information.
+
+```bash
+uname -a
+```
+
+---
+
+# `cat /etc/os-release`
+
+Shows Linux distribution details.
+
+```bash
+cat /etc/os-release
+```
+
+---
+
+# `lscpu`
+
+Displays CPU information.
+
+```bash
+lscpu
+```
+
+---
+
+# `lsmem`
+
+Displays memory information.
+
+```bash
+lsmem
+```
+
+---
+
+# `sudo`
+
+Executes command with superuser privileges.
+
+```bash
+sudo apt update
+```
+
+---
+
+# `su -`
+
+Switch user.
+
+Become root:
+
+```bash
+su -
+```
+
+---
+
+# Pipes in Linux (`|`)
+
+A pipe sends output of one command as input to another.
+
+Example:
+
+```bash
+history | less
+```
+
+---
+
+# `less`
+
+Makes large outputs readable.
+
+Example:
+
+```bash
+cat huge.log | less
+```
+
+---
+
+# `grep`
+
+Filters output using pattern matching.
+
+Example:
+
+```bash
+history | grep docker
+```
+
+This shows commands containing `docker`.
+
+---
+
+# Redirection in Linux
+
+## Overwrite File (`>`)
+
+Redirect output into file.
+
+```bash
+echo "hello" > file.txt
+```
+
+This overwrites file contents.
+
+---
+
+## Append to File (`>>`)
+
+Adds text to end of file.
+
+```bash
+echo "world" >> file.txt
+```
+
+---
+
+# Multiple Commands in One Line
+
+Use semicolon (`;`).
+
+```bash
+pwd; ls; whoami
+```
+
+---
+
+# Package Manager: APT
+
+APT stands for:
+
+```text
+Advanced Package Tool
+```
+
+Used mainly in:
+
+- Ubuntu
+- Debian
+- Linux Mint
+
+APT handles:
+
+- Dependency resolution
+- Package installation
+- Updates
+- Security verification
+- Software repositories
+
+---
+
+# Common APT Commands
+
+## Search Package
+
+```bash
+apt search nginx
+```
+
+---
+
+## Install Package
+
+```bash
+apt install nginx
+```
+
+---
+
+## Remove Package
+
+```bash
+apt remove nginx
+```
+
+---
+
+## Update Package Index
+
+```bash
+apt update
+```
+
+---
+
+## Upgrade Installed Packages
+
+```bash
+apt upgrade
+```
+
+---
+
+## Remove Unused Dependencies
+
+```bash
+apt autoremove
+```
+
+---
+
+## Full Upgrade
+
+```bash
+apt full-upgrade
+```
+
+Allows removing/installing packages if needed.
+
+---
+
+# Vim Text Editor
+
+Vim is a powerful terminal-based text editor.
+
+Open file:
+
+```bash
+vim file.txt
+```
+
+---
+
+# Important Vim Commands
+
+## Save & Quit
+
+```vim
+:wq
+```
+
+---
+
+## Quit Without Saving
+
+```vim
+:q!
+```
+
+---
+
+## Delete Current Line
+
+```vim
+dd
+```
+
+---
+
+## Delete Next 10 Lines
+
+```vim
+d10d
+```
+
+---
+
+## Undo
+
+```vim
+u
+```
+
+---
+
+## Move to End of Line & Enter Insert Mode
+
+```vim
+A
+```
+
+---
+
+## Move to End of Line Without Insert Mode
+
+```vim
+$
+```
+
+---
+
+## Move to Beginning of Line
+
+```vim
+0
+```
+
+---
+
+## Jump to Line 12
+
+```vim
+12G
+```
+
+---
+
+## Search Pattern
+
+```vim
+/pattern
+```
+
+---
+
+## Next Match
+
+```vim
+n
+```
+
+---
+
+## Previous Match
+
+```vim
+N
+```
+
+---
+
+## Replace Text Globally
+
+```vim
+:%s/old/new
+```
+
+---
+
+# Users, Groups & Permissions
+
+Linux is a multi-user operating system.
+
+There are mainly 3 user types:
+
+---
+
+# 1. Root User
+
+Superuser with complete access.
+
+---
+
+# 2. Regular User
+
+Normal users with limited permissions.
+
+---
+
+# 3. Service User
+
+Used by services/apps.
+
+Examples:
+
+- Docker
+- Nginx
+- Jenkins
+- Nexus
+
+Best practice:
+
+- No login shell
+- Limited permissions
+- Better security isolation
+
+---
+
+# Linux Groups
+
+Groups help manage permissions efficiently.
+
+A user can belong to multiple groups.
+
+Example:
+
+```bash
+docker
+sudo
+developers
+```
+
+---
+
+# User & Group Commands
+
+---
+
+# `adduser`
+
+Create new user.
+
+```bash
+sudo adduser john
+```
+
+---
+
+# `passwd`
+
+Change password.
+
+```bash
+passwd john
+```
+
+---
+
+# `groupadd`
+
+Create group.
+
+```bash
+sudo groupadd developers
+```
+
+---
+
+# `deluser`
+
+Delete user.
+
+```bash
+sudo deluser john
+```
+
+---
+
+# `groupdel`
+
+Delete group.
+
+```bash
+sudo groupdel developers
+```
+
+---
+
+# `usermod`
+
+Modify users.
+
+---
+
+## Change Primary Group
+
+```bash
+usermod -g developers john
+```
+
+---
+
+## Replace Secondary Groups
+
+```bash
+usermod -G docker,sudo john
+```
+
+---
+
+## Append Groups
+
+```bash
+usermod -aG docker john
+```
+
+---
+
+# `gpasswd -d`
+
+Remove user from group.
+
+```bash
+gpasswd -d john docker
+```
+
+---
+
+# `groups`
+
+Show groups of current user.
+
+```bash
+groups
+```
+
+---
+
+# `exit`
+
+Logout from current user session.
+
+```bash
+exit
+```
+
+---
+
+# File Ownership Commands
+
+---
+
+# `chown`
+
+Change ownership.
+
+```bash
+chown john file.txt
+```
+
+Change owner and group:
+
+```bash
+chown john:developers file.txt
+```
+
+---
+
+# `chgrp`
+
+Change group ownership.
+
+```bash
+chgrp developers file.txt
+```
+
+---
+
+# Linux Permissions
+
+Linux permissions are divided into 3 categories:
+
+1. Owner
+2. Group
+3. Others
+
+Each category can have:
+
+| Permission | Meaning       |
+| ---------- | ------------- |
+| r          | Read          |
+| w          | Write         |
+| x          | Execute       |
+| -          | No permission |
+
+---
+
+# Understanding Permission Example
+
+Example:
+
+```bash
+-rwxr-xr--
+```
+
+Breakdown:
+
+| Section | Meaning            |
+| ------- | ------------------ |
+| rwx     | Owner permissions  |
+| r-x     | Group permissions  |
+| r--     | Others permissions |
+
+---
+
+# chmod Command
+
+Used to change permissions.
+
+---
+
+# Remove Execute Permission
+
+```bash
+chmod -x script.sh
+```
+
+---
+
+# Remove Write Permission for Group
+
+```bash
+chmod g-w file.txt
+```
+
+---
+
+# Add Execute Permission for Group
+
+```bash
+chmod g+x script.sh
+```
+
+---
+
+# Add Execute Permission for User
+
+```bash
+chmod u+x script.sh
+```
+
+---
+
+# Add Execute Permission for Others
+
+```bash
+chmod o+x script.sh
+```
+
+---
+
+# Set Exact Permissions for Group
+
+```bash
+chmod g=rwx file.txt
+```
+
+---
+
+# `chmod 777`
+
+Give all permissions to everyone.
+
+```bash
+chmod 777 file.txt
+```
+
+This means:
+
+| User Type | Permissions |
+| --------- | ----------- |
+| Owner     | rwx         |
+| Group     | rwx         |
+| Others    | rwx         |
+
+⚠️ Avoid using `777` unless absolutely necessary because it creates security risks.
+
+---
+
+# Final Thoughts
+
+Linux fundamentals are the foundation of:
+
+- DevOps
+- Cloud Engineering
+- Backend Development
+- Cybersecurity
+- System Administration
+- Docker & Kubernetes
+
+Mastering:
+
+- Linux file system
+- Commands
+- Permissions
+- Users/groups
+- Package management
+
+will make everything else in tech much easier.
+
+The best way to learn Linux is:
+
+1. Open terminal
+2. Experiment daily
+3. Break things
+4. Fix things
+5. Build projects
+
+That is where real understanding happens.
+
+---
+
+# Practice Challenge
+
+Try these tasks:
+
+- Create users and groups
+- Change permissions on files
+- Install software using APT
+- Navigate entire filesystem using only terminal
+- Use Vim to edit config files
+- Search logs using grep
+- Redirect outputs into files
+
+The more hands-on you get, the faster Linux starts feeling natural.
