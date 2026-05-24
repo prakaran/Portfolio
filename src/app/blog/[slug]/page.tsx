@@ -33,7 +33,7 @@ const SingleBlogPage = async (Props: Params) => {
   return (
     <>
       <div className="flex min-h-screen items-start justify-start">
-        <Container className="min-h-[200vh] p-10 md:pt-20 md:pb-10">
+        <Container className="min-h-screen p-10 md:pt-20 md:pb-10">
           <img
             src={frontmatter.image}
             alt={frontmatter.title}
