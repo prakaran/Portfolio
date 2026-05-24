@@ -1,6 +1,7 @@
 import Container from "@/components/container";
 import Heading from "@/components/heading";
 import { Montage } from "@/components/montage";
+import Projects from "@/components/projects";
 import SubHeading from "@/components/sub-heading";
 import Timeline from "@/components/timeline";
 
@@ -13,17 +14,12 @@ const AboutPage = () => {
           <SubHeading>
             I am a passionate software engineer with experience in full-stack
             development. I enjoy working on challenging problems and
-            continuously learning new technologies. I am a quick learner and
-            always looking for new opportunities to grow and develop my skills.
+            continuously learning new technologies.
           </SubHeading>
-          <p className="text-secondary max-w-lg pt-4 text-sm md:text-sm">
-            I love to travel.
-          </p>
-          <Montage />
-          <p className="text-secondary max-w-lg pt-4 text-sm md:text-sm">
-            Here is the timeline of my life achievements.
-          </p>
-          <Timeline />
+          {/* <p className="text-secondary max-w-lg pt-4 text-sm md:text-sm">
+            Here are some of my projects.
+          </p> */}
+          <Projects />
         </Container>
       </div>
     </>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import { ViewTransitions } from "next-view-transitions";
+import Footer from "@/components/navbar/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <body className="flex min-h-full flex-col bg-neutral-200 dark:bg-neutral-700">
           <Navbar />
           {children}
+          <Footer />
         </body>
       </html>
     </ViewTransitions>

@@ -9,6 +9,7 @@ interface FrontMatter {
   date: string;
   author: string;
   slug: string;
+  image: string;
 }
 
 export const getSingleBlog = async (slug: string) => {
@@ -16,7 +17,7 @@ export const getSingleBlog = async (slug: string) => {
     const singleBlog = await fs.readFile(
       path.join(process.cwd(), "src/data", `${slug}.mdx`),
     );
-    const { content, frontmatter } = await compileMDX<{ title: string }>({
+    const { content, frontmatter } = await compileMDX<FrontMatter>({
       source: singleBlog,
       options: { parseFrontmatter: true },
     });

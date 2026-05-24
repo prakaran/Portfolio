@@ -34,6 +34,11 @@ const SingleBlogPage = async (Props: Params) => {
     <>
       <div className="flex min-h-screen items-start justify-start">
         <Container className="min-h-[200vh] p-10 md:pt-20 md:pb-10">
+          <img
+            src={frontmatter.image}
+            alt={frontmatter.title}
+            className="mx-auto mb-20 max-h-96 w-full max-w-2xl rounded-2xl object-cover shadow-xl"
+          />
           <div className="prose mx-auto max-w-3xl">{content}</div>
         </Container>
       </div>

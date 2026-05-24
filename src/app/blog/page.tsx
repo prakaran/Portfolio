@@ -1,4 +1,6 @@
 import Container from "@/components/container";
+import Heading from "@/components/heading";
+import SubHeading from "@/components/sub-heading";
 import { getBlogs } from "@/utils/mdx";
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
@@ -20,10 +22,13 @@ const BlogsPage = async () => {
   return (
     <>
       <div className="flex min-h-screen items-start justify-start">
-        <Container className="min-h-[200vh] p-4 md:pt-20 md:pb-10">
-          <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
-            All Blogs
-          </h1>
+        <Container className="min-h-[200vh] p-10 md:pt-20 md:pb-10">
+          <Heading>All Blogs</Heading>
+          <SubHeading>
+            I'm a software engineer with a passion for building scalable and
+            efficient systems. I'm currently working as a software engineer at
+            Google.
+          </SubHeading>
           <div className="flex flex-col gap-4 py-10">
             {allBlogs.map((blog, idx) => (
               <Link href={`/blog/${blog.slug}`} key={blog.title}>
