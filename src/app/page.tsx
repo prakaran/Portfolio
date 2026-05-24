@@ -1,11 +1,12 @@
 import Container from "@/components/container";
+import LandingBlogs from "@/components/landing-blogs";
 import Projects from "@/components/projects";
 
 const Home = () => {
   return (
     <>
       <div className="flex min-h-screen items-start justify-start">
-        <Container className="min-h-[200vh] p-4 md:pt-20 md:pb-10">
+        <Container className="min-h-[200vh] p-10 md:pt-20 md:pb-10">
           <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
             Karan Bhatt
           </h1>
@@ -15,6 +16,7 @@ const Home = () => {
             Engineer at Verloop.io
           </p>
           <Projects />
+          <LandingBlogs />
         </Container>
       </div>
     </>
