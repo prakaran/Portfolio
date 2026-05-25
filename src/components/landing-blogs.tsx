@@ -14,7 +14,7 @@ const LandingBlogs = async () => {
 
   return (
     <>
-      <div>
+      <div className="px-4">
         <SectionHeading delay={0.2}>
           I love writing about things I learn.
         </SectionHeading>

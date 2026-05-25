@@ -26,7 +26,7 @@ export default function RootLayout({
         lang="en"
         className={cn("h-full", "antialiased", "font-sans", inter.className)}
       >
-        <body className="flex min-h-full flex-col bg-neutral-200 [--pattern-fg:var(--color-neutral-950)]/20 dark:bg-neutral-700">
+        <body className="flex min-h-full flex-col bg-neutral-200 [--pattern-fg:var(--color-neutral-950)]/10 dark:bg-neutral-700">
           <Navbar />
           {children}
           <Footer />

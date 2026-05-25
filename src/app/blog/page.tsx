@@ -1,5 +1,6 @@
 import Container from "@/components/container";
 import Heading from "@/components/heading";
+import Scales from "@/components/scales";
 import SubHeading from "@/components/sub-heading";
 import { getBlogs } from "@/utils/mdx";
 import { Metadata } from "next";
@@ -22,14 +23,15 @@ const BlogsPage = async () => {
   return (
     <>
       <div className="flex min-h-screen items-start justify-start">
-        <Container className="min-h-screen p-10 md:pt-20 md:pb-10">
+        <Container className="min-h-screen px-8 md:pt-20 md:pb-10">
+          <Scales />
           <Heading>All Blogs</Heading>
           <SubHeading>
             I'm a software engineer with a passion for building scalable and
             efficient systems. I'm currently working as a software engineer at
             Google.
           </SubHeading>
-          <div className="flex flex-col gap-8 py-10">
+          <div className="shadow-section-inset dark:shadow-section-inset-dark my-4 flex flex-col gap-8 border-y border-neutral-200 px-4 py-10">
             {allBlogs.map((blog, idx) => (
               <Link href={`/blog/${blog.slug}`} key={blog.title}>
                 <div className="flex items-center justify-between">

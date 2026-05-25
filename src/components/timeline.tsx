@@ -3,6 +3,7 @@ import { motion, useInView } from "motion/react";
 import { IconCircleCheckFilled } from "@tabler/icons-react";
 import React, { ReactNode, useRef } from "react";
 import { cn } from "@/lib/utils";
+import SectionHeading from "./section-heading";
 
 interface TimelineItem {
   title: string;
@@ -72,7 +73,13 @@ const Timeline = () => {
   ];
   return (
     <>
-      <div ref={ref} className="py-10">
+      <div
+        ref={ref}
+        className="shadow-section-inset dark:shadow-section-inset-dark my-4 border-y border-neutral-200 px-4"
+      >
+        <SectionHeading delay={0.2} className="my-8">
+          Here is the timeline of my life achievements.
+        </SectionHeading>
         {data.map((year, idx) => (
           <div key={idx} className="mb-4">
             <motion.h2

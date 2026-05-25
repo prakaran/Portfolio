@@ -17,8 +17,7 @@ const Container = ({
           className,
         )}
       >
-        <Scales />
-        <div className="px-2">{children}</div>
+        <div>{children}</div>
       </div>
     </>
   );

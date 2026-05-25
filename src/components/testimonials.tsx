@@ -5,7 +5,7 @@ import SectionHeading from "./section-heading";
 const Testimonial = () => {
   return (
     <>
-      <div className="py-10">
+      <div className="shadow-section-inset my-4 border-y border-neutral-200 px-4 py-4">
         <SectionHeading delay={0.2}>
           Here's what people say about me.
         </SectionHeading>
