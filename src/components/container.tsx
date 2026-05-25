@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import Scales from "./scales";
 
 const Container = ({
   children,
@@ -12,11 +13,12 @@ const Container = ({
     <>
       <div
         className={cn(
-          "mx-auto w-full max-w-4xl bg-white dark:bg-black",
+          "relative mx-auto w-full max-w-4xl bg-white dark:bg-black",
           className,
         )}
       >
-        {children}
+        <Scales />
+        <div className="px-2">{children}</div>
       </div>
     </>
   );

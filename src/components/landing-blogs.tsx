@@ -18,8 +18,8 @@ const LandingBlogs = async () => {
         <SectionHeading delay={0.2}>
           I love writing about things I learn.
         </SectionHeading>
-        <div className="flex flex-col gap-4 py-10">
-          {allBlogs.map((blog, idx) => (
+        <div className="flex flex-col gap-8 py-10">
+          {allBlogs.slice(0, 3).map((blog, idx) => (
             <MotionDiv
               initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
