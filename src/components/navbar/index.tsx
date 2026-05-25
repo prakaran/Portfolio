@@ -65,6 +65,7 @@ const Navbar = () => {
             alt="Avatar"
             width={50}
             height={50}
+            loading="eager"
           />
         </Link>
         <div className="flex items-center">

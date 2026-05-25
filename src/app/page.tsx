@@ -3,6 +3,8 @@ import Heading from "@/components/heading";
 import LandingBlogs from "@/components/landing-blogs";
 import Projects from "@/components/projects";
 import SubHeading from "@/components/sub-heading";
+import Testimonial from "@/components/testimonials";
+import { projects } from "@/constants/projects";
 
 const Home = () => {
   return (
@@ -15,8 +17,9 @@ const Home = () => {
             user-friendly applications.I am currently working as a Software
             Engineer at Verloop.io
           </SubHeading>
-          <Projects />
+          <Projects projects={projects.slice(0, 3)} />
           <LandingBlogs />
+          <Testimonial />
         </Container>
       </div>
     </>

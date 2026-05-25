@@ -1,9 +1,8 @@
 import Container from "@/components/container";
 import Heading from "@/components/heading";
-import { Montage } from "@/components/montage";
 import Projects from "@/components/projects";
 import SubHeading from "@/components/sub-heading";
-import Timeline from "@/components/timeline";
+import { projects } from "@/constants/projects";
 
 const AboutPage = () => {
   return (
@@ -19,7 +18,7 @@ const AboutPage = () => {
           {/* <p className="text-secondary max-w-lg pt-4 text-sm md:text-sm">
             Here are some of my projects.
           </p> */}
-          <Projects />
+          <Projects projects={projects} />
         </Container>
       </div>
     </>
