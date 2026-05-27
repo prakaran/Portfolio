@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import { ViewTransitions } from "next-view-transitions";
 import Footer from "@/components/navbar/footer";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,10 +28,17 @@ export default function RootLayout({
         className={cn("h-full", "antialiased", "font-sans", inter.className)}
       >
         <body className="flex min-h-full flex-col bg-neutral-200 [--pattern-fg:var(--color-neutral-950)]/10 dark:bg-neutral-700">
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster position="top-center" />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster position="top-center" />
+          </ThemeProvider>
         </body>
       </html>
     </ViewTransitions>

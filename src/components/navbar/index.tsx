@@ -1,4 +1,7 @@
 "use client";
+import { IconSun } from "@tabler/icons-react";
+import { IconMoon } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
 import { useState } from "react";
 import Container from "../container";
 import Image from "next/image";
@@ -11,6 +14,7 @@ import {
 import { Link } from "next-view-transitions";
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
   const [hovered, setHovered] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -69,6 +73,32 @@ const Navbar = () => {
           />
         </Link>
         <div className="flex items-center">
+          <div
+            className="relative mx-2 cursor-pointer px-2 py-1"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onMouseEnter={() => setHovered("theme")}
+            onMouseLeave={() => setHovered(null)}
+          >
+            {hovered === "theme" && (
+              <motion.span
+                layoutId="hovered-span"
+                className="absolute inset-0 h-full w-full rounded-md bg-neutral-200 dark:bg-neutral-800"
+              />
+            )}
+            {theme === "dark" ? (
+              <IconSun
+                stroke={1.5}
+                size={20}
+                className="relative z-10"
+              />
+            ) : (
+              <IconMoon
+                stroke={1.5}
+                size={20}
+                className="relative z-10"
+              />
+            )}
+          </div>
           {navItems.map((item) => (
             <Link
               className="relative px-2 py-1 text-sm"
