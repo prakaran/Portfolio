@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { toast } from "sonner";
+import { sendEmail } from "@/app/actions/email";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { name, email, message } = formData;
@@ -15,17 +18,20 @@ const ContactForm = () => {
       toast.error("Please fill all the fields.");
       return;
     }
-    // call the api to submit the form
-    const APICall = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("API call successful");
-      }, 1000);
-    });
-    const response = await APICall;
-    if (response) {
-      toast.success("Form submitted successfully.");
-    } else {
-      toast.error("Something went wrong.");
+
+    setIsSubmitting(true);
+    try {
+      const result = await sendEmail({ name, email, message });
+      if (result.success) {
+        toast.success("Form submitted successfully.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error(result.error || "Something went wrong.");
+      }
+    } catch (error) {
+      toast.error("An unexpected error occurred.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
   const handleChange = (
@@ -94,10 +100,11 @@ const ContactForm = () => {
         />
       </div>
       <button
-        className="bg-primary cursor-pointer rounded-md px-4 py-2 text-sm font-medium text-white transition-all hover:bg-neutral-950 active:scale-95"
+        className="bg-primary cursor-pointer rounded-md px-4 py-2 text-sm font-medium text-white transition-all hover:bg-neutral-950 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         type="submit"
+        disabled={isSubmitting}
       >
-        Send Message
+        {isSubmitting ? "Sending..." : "Send Message"}
       </button>
     </form>
   );

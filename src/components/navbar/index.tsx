@@ -52,12 +52,13 @@ const Navbar = () => {
           boxShadow: scrolled ? "var(--shadow-input)" : "none",
           width,
           y,
+          maxWidth: "56rem",
         }}
         transition={{
           duration: 0.4,
           ease: "linear",
         }}
-        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white/60 px-3 py-2 backdrop-blur-md dark:bg-neutral-900/60"
+        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white/50 px-3 py-2 backdrop-blur-sm dark:bg-neutral-900/50"
       >
         <Link href="/">
           <Image
