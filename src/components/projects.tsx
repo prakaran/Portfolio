@@ -5,6 +5,16 @@ import Link from "next/link";
 import { Project } from "@/constants/projects";
 import SectionHeading from "./section-heading";
 
+const techMap: Record<string, string> = {
+  React: "react",
+  TailwindCSS: "tailwindcss",
+  MongoDB: "mongodb",
+  NodeJS: "nodejs",
+  Express: "express",
+  Rust: "rust",
+  "Next.js": "nextjs",
+};
+
 const Projects = ({ projects }: { projects: Project[] }) => {
   return (
     <>
@@ -23,34 +33,51 @@ const Projects = ({ projects }: { projects: Project[] }) => {
                 ease: "easeInOut",
               }}
               key={project.title}
-              className="group group relative mb-4 rounded-2xl"
+              className="group relative mb-4 rounded-2xl"
             >
               <Link href={project.href}>
-                <Image
-                  className="max-h-[174.219px] w-full rounded-xl object-cover transition duration-200 ease-in-out group-hover:scale-[1.02]"
-                  src={project.src}
-                  alt={project.title}
-                  width={300}
-                  height={300}
-                  loading="eager"
-                />
+                <div className="relative overflow-hidden rounded-xl">
+                  <Image
+                    className="max-h-[174.219px] w-full rounded-xl object-cover transition duration-200 ease-in-out group-hover:scale-[1.02]"
+                    src={project.src}
+                    alt={project.title}
+                    width={300}
+                    height={300}
+                    loading="eager"
+                  />
+                </div>
                 <div className="flex flex-1 flex-col justify-between py-4 transition-all duration-300 group-hover:px-4">
                   <div>
                     <h2 className="z-20 mt-2 font-medium tracking-tight text-neutral-500 dark:text-neutral-200">
                       {project.title}
                     </h2>
-                    <p className="mt-2 max-w-sm text-sm text-neutral-500 hover:max-w-sm dark:text-neutral-400">
+                    <p className="mt-2 max-w-[14rem] text-sm text-neutral-500 dark:text-neutral-400">
                       {project.description}
                     </p>
                   </div>
-                  <div className="mt-2 flex max-w-[14rem] flex-wrap gap-1">
-                    {project.techStack.map((tech) => (
-                      <span
+                  <div className="mt-4 flex items-center">
+                    {project.techStack.map((tech, i) => (
+                      <motion.img
                         key={tech}
-                        className="text-xs text-neutral-500 dark:text-neutral-400"
-                      >
-                        {tech}
-                      </span>
+                        src={`https://skillicons.dev/icons?i=${techMap[tech] || "react"}`}
+                        alt={tech}
+                        title={tech}
+                        className="h-8 w-8 rounded-full border-2 border-neutral-200 shadow-sm dark:border-neutral-800"
+                        style={{
+                          marginLeft: i === 0 ? 0 : "-8px",
+                          zIndex: 10,
+                        }}
+                        whileHover={{
+                          scale: 1.2,
+                          zIndex: 20,
+                          y: -2,
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                      />
                     ))}
                   </div>
                 </div>
