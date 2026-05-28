@@ -27,7 +27,7 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", "font-sans", inter.className)}
     >
-      <body className="flex min-h-full flex-col bg-neutral-200 [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-200)]/5">
+      <body className="flex min-h-full flex-col bg-neutral-200 [--pattern-fg:var(--color-neutral-950)]/8 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-200)]/5">
         <ViewTransitions>
           <ThemeProvider
             attribute="class"

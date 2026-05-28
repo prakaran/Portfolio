@@ -31,13 +31,16 @@ export const ThemeToggle = ({ hovered, setHovered }: ThemeToggleProps) => {
           className="absolute inset-0 h-full w-full rounded-md bg-neutral-200 dark:bg-neutral-800"
         />
       )}
-      {mounted && (
-        theme === "dark" ? (
-          <IconSun stroke={1.5} size={20} className="relative z-10" />
+      {mounted &&
+        (theme === "dark" ? (
+          <motion.div animate={{ rotate: 180 }} transition={{ duration: 0.5 }}>
+            <IconSun stroke={1.5} size={20} className="relative z-10" />
+          </motion.div>
         ) : (
-          <IconMoon stroke={1.5} size={20} className="relative z-10" />
-        )
-      )}
+          <motion.div animate={{ rotate: -90 }} transition={{ duration: 0.5 }}>
+            <IconMoon stroke={1.5} size={20} className="relative z-10" />
+          </motion.div>
+        ))}
     </div>
   );
 };

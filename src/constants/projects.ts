@@ -18,7 +18,7 @@ export const projects: Project[] = [
     title: "Rakam",
     src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop",
     description:
-      "A peer-to-peer digital wallet app for seamless money transfers and transaction tracking.",
+      "A peer-to-peer digital wallet web app for seamless money transfers and transaction tracking.",
     href: "#",
     techStack: ["React", "TailwindCSS", "MongoDB", "NodeJS", "Express"],
   },
