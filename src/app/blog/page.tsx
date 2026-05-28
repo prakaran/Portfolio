@@ -31,11 +31,11 @@ const BlogsPage = async () => {
             efficient systems. I'm currently working as a software engineer at
             Google.
           </SubHeading>
-          <div className="shadow-section-inset dark:shadow-section-inset-dark my-4 flex flex-col gap-8 border-y border-neutral-200 px-4 py-10">
+          <div className="shadow-section-inset dark:shadow-section-inset-dark my-4 flex flex-col gap-8 border-y border-neutral-200 px-4 py-10 dark:border-neutral-800">
             {allBlogs.map((blog, idx) => (
               <Link href={`/blog/${blog.slug}`} key={blog.title}>
                 <div className="flex items-center justify-between">
-                  <h2 className="text-primary text-base font-bold tracking-tight md:text-base">
+                  <h2 className="text-primary text-base font-bold tracking-tight md:text-base dark:text-neutral-100">
                     {blog.title}
                   </h2>
                   <p className="text-secondary pt-2 text-sm tracking-tight md:text-sm">

@@ -75,7 +75,7 @@ const Timeline = () => {
     <>
       <div
         ref={ref}
-        className="shadow-section-inset dark:shadow-section-inset-dark my-4 border-y border-neutral-200 px-4"
+        className="shadow-section-inset dark:shadow-section-inset-dark my-4 border-y border-neutral-100 px-4 dark:border-neutral-800"
       >
         <SectionHeading delay={0.2} className="my-8">
           Here is the timeline of my life achievements.
@@ -93,7 +93,7 @@ const Timeline = () => {
                 duration: 0.3,
                 delay: 0.1 * idx,
               }}
-              className="shadow-input mb-2 w-fit rounded-md px-2 py-0.5 font-bold text-black"
+              className="shadow-input dark:shadow-input-dark mb-2 w-fit rounded-md border border-neutral-100 bg-neutral-100 px-2 py-0.5 font-bold text-neutral-950 dark:border-neutral-800 dark:bg-neutral-950/40 dark:text-neutral-100"
             >
               {year.title}
             </motion.h2>
@@ -114,7 +114,7 @@ const Timeline = () => {
                         duration: 0.3,
                         delay: 0.1 * idx,
                       }}
-                      className="font-semibold text-neutral-600"
+                      className="font-semibold text-neutral-600 dark:text-neutral-400"
                     >
                       {item.title}
                     </motion.h3>

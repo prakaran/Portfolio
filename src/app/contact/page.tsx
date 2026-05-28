@@ -17,7 +17,7 @@ const ContactPage = () => {
             I am open to freelancing offers. Reach out to me if you have any
             projects in mind. I would love to collaborate with you.
           </SubHeading>
-          <div className="shadow-section-inset dark:shadow-section-inset-dark my-4 flex items-center justify-center border-y border-neutral-200 px-4">
+          <div className="shadow-section-inset dark:shadow-section-inset-dark my-4 flex items-center justify-center border-y border-neutral-200 px-4 dark:border-neutral-800">
             <ContactForm />
           </div>
         </Container>

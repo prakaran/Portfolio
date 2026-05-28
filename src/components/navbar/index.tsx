@@ -1,8 +1,5 @@
 "use client";
-import { IconSun } from "@tabler/icons-react";
-import { IconMoon } from "@tabler/icons-react";
-import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "../container";
 import Image from "next/image";
 import {
@@ -12,9 +9,9 @@ import {
   useTransform,
 } from "motion/react";
 import { Link } from "next-view-transitions";
+import { ThemeToggle } from "./theme-toggle";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
   const [hovered, setHovered] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -60,7 +57,7 @@ const Navbar = () => {
           duration: 0.4,
           ease: "linear",
         }}
-        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white px-3 py-2 dark:bg-neutral-900"
+        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white/60 px-3 py-2 backdrop-blur-md dark:bg-neutral-900/60"
       >
         <Link href="/">
           <Image
@@ -73,32 +70,7 @@ const Navbar = () => {
           />
         </Link>
         <div className="flex items-center">
-          <div
-            className="relative mx-2 cursor-pointer px-2 py-1"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            onMouseEnter={() => setHovered("theme")}
-            onMouseLeave={() => setHovered(null)}
-          >
-            {hovered === "theme" && (
-              <motion.span
-                layoutId="hovered-span"
-                className="absolute inset-0 h-full w-full rounded-md bg-neutral-200 dark:bg-neutral-800"
-              />
-            )}
-            {theme === "dark" ? (
-              <IconSun
-                stroke={1.5}
-                size={20}
-                className="relative z-10"
-              />
-            ) : (
-              <IconMoon
-                stroke={1.5}
-                size={20}
-                className="relative z-10"
-              />
-            )}
-          </div>
+          <ThemeToggle hovered={hovered} setHovered={setHovered} />
           {navItems.map((item) => (
             <Link
               className="relative px-2 py-1 text-sm"

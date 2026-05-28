@@ -22,7 +22,7 @@ const SubHeading = ({
       >
         <Tag
           className={cn(
-            "text-secondary max-w-lg px-4 pt-4 text-sm md:text-sm",
+            "text-secondary dark:text-secondary max-w-lg px-4 pt-4 text-sm md:text-base",
             className,
           )}
         >
@@ -32,5 +32,4 @@ const SubHeading = ({
     </>
   );
 };
-
 export default SubHeading;

@@ -13,7 +13,7 @@ const Container = ({
     <>
       <div
         className={cn(
-          "relative mx-auto w-full max-w-4xl bg-white dark:bg-black",
+          "relative mx-auto w-full max-w-4xl bg-white dark:bg-neutral-900",
           className,
         )}
       >

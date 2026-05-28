@@ -33,7 +33,7 @@ const LandingBlogs = async () => {
             >
               <Link href={`/blog/${blog.slug}`}>
                 <div className="flex items-center justify-between">
-                  <h2 className="text-primary text-base font-bold tracking-tight md:text-base">
+                  <h2 className="text-primary text-base font-bold tracking-tight md:text-base dark:text-neutral-100">
                     {blog.title}
                   </h2>
                   <p className="text-secondary pt-2 text-sm tracking-tight md:text-sm">

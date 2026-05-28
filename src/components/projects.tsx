@@ -8,7 +8,7 @@ import SectionHeading from "./section-heading";
 const Projects = ({ projects }: { projects: Project[] }) => {
   return (
     <>
-      <div className="shadow-section-inset my-4 border-y border-neutral-200 px-4">
+      <div className="shadow-section-inset dark:shadow-section-inset-dark my-4 border-y border-neutral-100 px-4 py-6 dark:border-neutral-800">
         <SectionHeading delay={0.2}>
           I love building things and I'm always looking for new challenges.
         </SectionHeading>
@@ -23,7 +23,7 @@ const Projects = ({ projects }: { projects: Project[] }) => {
                 ease: "easeInOut",
               }}
               key={project.title}
-              className="group relative mb-4 rounded-2xl"
+              className="group group relative mb-4 rounded-2xl"
             >
               <Link href={project.href}>
                 <Image
@@ -36,10 +36,10 @@ const Projects = ({ projects }: { projects: Project[] }) => {
                 />
                 <div className="flex flex-1 flex-col justify-between py-4 transition-all duration-300 group-hover:px-4">
                   <div>
-                    <h2 className="mt-2 font-medium tracking-tight text-neutral-500 dark:text-neutral-400">
+                    <h2 className="z-20 mt-2 font-medium tracking-tight text-neutral-500 dark:text-neutral-200">
                       {project.title}
                     </h2>
-                    <p className="mt-2 max-w-sm text-sm text-neutral-500 dark:text-neutral-400">
+                    <p className="mt-2 max-w-sm text-sm text-neutral-500 hover:max-w-sm dark:text-neutral-400">
                       {project.description}
                     </p>
                   </div>

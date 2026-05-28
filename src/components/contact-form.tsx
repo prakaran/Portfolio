@@ -49,13 +49,14 @@ const ContactForm = () => {
           Full name
         </label>
         <input
+          required
           onChange={handleChange}
           value={formData.name}
           type="text"
           id="name"
           name="name"
           placeholder="Enter your full name"
-          className="shadow-input rounded-md border border-neutral-400 bg-neutral-200 px-2 py-2 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-input rounded-md border border-neutral-400 bg-neutral-200 px-2 py-2 text-sm focus:ring-2 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800"
         />
       </div>
       <div className="flex flex-col">
@@ -66,13 +67,14 @@ const ContactForm = () => {
           Email Address
         </label>
         <input
+          required
           type="email"
           id="email"
           value={formData.email}
           onChange={handleChange}
           name="email"
           placeholder="Enter your email"
-          className="shadow-input rounded-md border border-neutral-400 bg-neutral-200 px-2 py-2 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-input rounded-md border border-neutral-400 bg-neutral-200 px-2 py-2 text-sm focus:ring-2 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800"
         />
       </div>
       <div className="flex flex-col">
@@ -83,14 +85,18 @@ const ContactForm = () => {
           Message
         </label>
         <textarea
+          required
           name="message"
           value={formData.message}
           onChange={handleChange}
           placeholder="Enter your message"
-          className="shadow-input min-h-40 resize-none rounded-md border border-neutral-400 bg-neutral-200 px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-input min-h-40 resize-none rounded-md border border-neutral-400 bg-neutral-200 px-2 py-1 text-sm focus:ring-2 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800"
         />
       </div>
-      <button className="bg-primary rounded-md p-2 text-white" type="submit">
+      <button
+        className="bg-primary cursor-pointer rounded-md px-4 py-2 text-sm font-medium text-white transition-all hover:bg-neutral-950 active:scale-95"
+        type="submit"
+      >
         Send Message
       </button>
     </form>
