@@ -41,7 +41,9 @@ const SingleBlogPage = async (Props: Params) => {
             alt={frontmatter.title}
             className="mx-auto mb-20 max-h-96 w-full max-w-2xl rounded-2xl object-cover shadow-xl"
           />
-          <div className="prose mx-auto max-w-3xl">{content}</div>
+          <div className="prose dark:prose-invert mx-auto max-w-3xl">
+            {content}
+          </div>
         </Container>
       </div>
     </>

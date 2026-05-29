@@ -12,7 +12,7 @@ export function LayoutTextFlipDemo() {
             "Software Engineer",
             "Full Stack Engineer",
             "DevOps Engineer",
-            "Cloud Engineer",
+            "AI Engineer",
           ]}
           className=""
         />

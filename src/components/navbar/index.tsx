@@ -37,12 +37,12 @@ const Navbar = () => {
       href: "/projects",
     },
     {
-      title: "Contact",
-      href: "/contact",
-    },
-    {
       title: "Blog",
       href: "/blog",
+    },
+    {
+      title: "Contact",
+      href: "/contact",
     },
   ];
   return (
@@ -50,6 +50,7 @@ const Navbar = () => {
       <motion.nav
         style={{
           boxShadow: scrolled ? "var(--shadow-input)" : "none",
+          border: scrolled ? "1px solid var(--color-border)" : "none",
           width,
           y,
           maxWidth: "56rem",

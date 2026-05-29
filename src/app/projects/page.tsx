@@ -5,17 +5,16 @@ import Scales from "@/components/scales";
 import SubHeading from "@/components/sub-heading";
 import { projects } from "@/constants/projects";
 
-const AboutPage = () => {
+const ProjectPage = () => {
   return (
     <>
       <div className="flex min-h-screen items-start justify-start">
         <Container className="min-h-screen px-8 md:pt-20 md:pb-10">
           <Scales />
-          <Heading>About Me</Heading>
+          <Heading>Projects</Heading>
           <SubHeading>
-            I am a passionate software engineer with experience in full-stack
-            development. I enjoy working on challenging problems and
-            continuously learning new technologies.
+            Here are some of my favorite projects I've worked on. I'm passionate
+            about building cool stuff and I love sharing my work with the world.
           </SubHeading>
           <Projects projects={projects} />
         </Container>
@@ -24,4 +23,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default ProjectPage;

@@ -11,9 +11,13 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio Website",
+  title: "Karan Bhatt - Fullstack Software Engineer and DevOps Engineer",
   description:
     "A beautiful portfolio website built with Next.js and Tailwind CSS.",
+  keywords: ["Karan Bhatt", "Software Engineer", "DevOps Engineer"],
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

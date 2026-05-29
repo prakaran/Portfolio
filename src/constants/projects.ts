@@ -19,8 +19,24 @@ export const projects: Project[] = [
     src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop",
     description:
       "A peer-to-peer digital wallet web app for seamless money transfers and transaction tracking.",
-    href: "#",
+    href: "https://github.com/prakaran/rakam",
     techStack: ["React", "TailwindCSS", "MongoDB", "NodeJS", "Express"],
+  },
+  {
+    title: "Roopantar",
+    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop",
+    description:
+      "A modern e-commerce platform for Nepali products. Built using Next.js, PostgreSQL, Prisma, TypeScript, Tailwind CSS, and Shadcn UI.",
+    href: "https://github.com/prakaran/roopantar",
+    techStack: ["NextJS", "TailwindCSS", "Postgres", "Prisma", "Typescript"],
+  },
+  {
+    title: "JobsAPI",
+    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop",
+    description:
+      "Production-ready REST API for job listings with user authentication (JWT), CRUD operations, and proper error handling.",
+    href: "https://github.com/prakaran/jobs-api",
+    techStack: ["NodeJS", "Express", "MongoDB"],
   },
   {
     title: "Solana Address Book",
@@ -36,26 +52,10 @@ export const projects: Project[] = [
     description:
       "My personal portfolio — minimal, fast, and built with Next.js and Framer Motion.",
     href: "#",
-    techStack: ["React", "TailwindCSS", "Next.js", "Framer Motion"],
+    techStack: ["React", "TailwindCSS", "NextJS"],
   },
   {
     title: "Rakam Frontend",
-    src: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&auto=format&fit=crop",
-    description:
-      "A clean, minimalist fintech UI redesign built with React and TailwindCSS.",
-    href: "#",
-    techStack: ["React", "TailwindCSS"],
-  },
-  {
-    title: "Project X",
-    src: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&auto=format&fit=crop",
-    description:
-      "A clean, minimalist fintech UI redesign built with React and TailwindCSS.",
-    href: "#",
-    techStack: ["React", "TailwindCSS"],
-  },
-  {
-    title: "Project Y",
     src: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&auto=format&fit=crop",
     description:
       "A clean, minimalist fintech UI redesign built with React and TailwindCSS.",
@@ -67,19 +67,19 @@ export const projects: Project[] = [
 export const TestimonialData: Testimonial[] = [
   {
     quote:
-      "Working with Karan was smooth and efficient. He quickly improved our backend performance and resolved issues we had struggled with for months.",
-    name: "Dinesh Ojha",
-    avatar:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZhdGFyfGVufDB8fDB8fHwy",
-    position: "Software Engineer",
-  },
-  {
-    quote:
       "Karan brought both technical clarity and reliability to the team. He consistently delivered features on time without compromising quality.",
     name: "Damodar Kafle",
     avatar:
       "https://images.unsplash.com/photo-1654110455429-cf322b40a906?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHwy",
     position: "Product Manager",
+  },
+  {
+    quote:
+      "He handled our migration to TypeScript with great care and significantly improved the overall developer experience.",
+    name: "Kriti Shrestha",
+    avatar:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGF2YXRhcnxlbnwwfHwwfHx8Mg%3D%3D",
+    position: "Engineering Director",
   },
   {
     quote:
@@ -89,13 +89,14 @@ export const TestimonialData: Testimonial[] = [
       "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXZhdGFyfGVufDB8fDB8fHwy",
     position: "Co-Founder, Qbits",
   },
+
   {
     quote:
-      "Our frontend performance improved noticeably after Karan joined the project. The application became faster and much easier to maintain.",
-    name: "Prabhat Joshi",
+      "Working with Karan was smooth and efficient. He quickly improved our backend performance and resolved issues we had struggled with for months.",
+    name: "Dinesh Ojha",
     avatar:
-      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fHwy",
-    position: "Lead Frontend Engineer",
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZhdGFyfGVufDB8fDB8fHwy",
+    position: "Software Engineer",
   },
   {
     quote:
@@ -113,14 +114,7 @@ export const TestimonialData: Testimonial[] = [
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fHwy",
     position: "Senior UI/UX Designer",
   },
-  {
-    quote:
-      "He handled our migration to TypeScript with great care and significantly improved the overall developer experience.",
-    name: "Kriti Shrestha",
-    avatar:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGF2YXRhcnxlbnwwfHwwfHx8Mg%3D%3D",
-    position: "Engineering Director",
-  },
+
   {
     quote:
       "Karan helped strengthen our authentication system and improved several important areas of platform security.",
@@ -128,5 +122,13 @@ export const TestimonialData: Testimonial[] = [
     avatar:
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHwy",
     position: "Cybersecurity Analyst",
+  },
+  {
+    quote:
+      "Our frontend performance improved noticeably after Karan joined the project. The application became faster and much easier to maintain.",
+    name: "Prabhat Joshi",
+    avatar:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fHwy",
+    position: "Lead Frontend Engineer",
   },
 ];

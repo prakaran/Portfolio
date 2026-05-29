@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <div className="flex min-h-screen items-start justify-start">
-        <Container className="relative min-h-[200vh] px-8 md:pt-20 md:pb-10">
+        <Container className="relative min-h-screen px-8 md:pt-20 md:pb-10">
           <Scales />
           <div className="flex flex-col items-start justify-start">
             <Heading>
@@ -21,8 +21,8 @@ const Home = () => {
 
             <SubHeading>
               I'm a software engineer with a passion for building innovative and
-              user-friendly applications.I am currently working as a Software
-              Engineer at Verloop.io
+              user-friendly applications. Focused on clean, scalable, and
+              maintainable code.
             </SubHeading>
           </div>
           <Projects projects={projects.slice(0, 3)} />

@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import rehypePrettyCode from "rehype-pretty-code";
 
 interface FrontMatter {
   title: string;
@@ -16,10 +17,24 @@ export const getSingleBlog = async (slug: string) => {
   try {
     const singleBlog = await fs.readFile(
       path.join(process.cwd(), "src/data", `${slug}.mdx`),
+      "utf-8",
     );
     const { content, frontmatter } = await compileMDX<FrontMatter>({
       source: singleBlog,
-      options: { parseFrontmatter: true },
+      options: {
+        parseFrontmatter: true,
+        mdxOptions: {
+          rehypePlugins: [
+            [
+              rehypePrettyCode,
+              {
+                theme: "vesper",
+                keepBackground: true,
+              },
+            ],
+          ],
+        },
+      },
     });
     return { content, frontmatter };
   } catch (error) {

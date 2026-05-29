@@ -12,7 +12,10 @@ const techMap: Record<string, string> = {
   NodeJS: "nodejs",
   Express: "express",
   Rust: "rust",
-  "Next.js": "nextjs",
+  NextJS: "nextjs",
+  Postgres: "postgres",
+  Prisma: "prisma",
+  Typescript: "typescript",
 };
 
 const Projects = ({ projects }: { projects: Project[] }) => {
